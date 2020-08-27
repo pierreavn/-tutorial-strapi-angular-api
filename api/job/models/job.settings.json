@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "name": "Job"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "richtext",
+      "maxLength": 65535,
+      "required": true
+    },
+    "company": {
+      "via": "jobs",
+      "model": "company"
+    }
+  }
+}
